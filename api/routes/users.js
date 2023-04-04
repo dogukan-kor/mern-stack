@@ -9,11 +9,11 @@ router.get("/checkauthentication",verifyToken,(req,res,next)=>{
 })
 
 router.get("/checkuser/:id",verifyUser,(req,res,next)=>{
-    res.send("Hello user,you are logged in and you can delete you account");
+    res.send("user sayfasına hoşgeldiniz");
 })
 
 router.get("/checkadmin/:id",verifyAdmin,(req,res,next)=>{
-    res.send("Hello admin,you are logged in and you can delete you accounts");
+    res.send("Admin sayfasına hoşgeldiniz.");
 })
 
 //Güncelleme

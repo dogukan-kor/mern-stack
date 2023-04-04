@@ -28,24 +28,10 @@ export const deleteUser=async (req,res,next)=>{
 }
 
 export const getUser=async (req,res,next)=>{
-    console.log("Get çalıştı")
-    try{
-        const user=await User.findById(
-            req.params.id,
-            );       
-        res.status(200).json(user);
-    }catch(err){
-        next(err);
-    } 
+    console.log("Kullanıcı getirildi");
 }
 export const getAllUsers=async (req,res,next)=>{
-    console.log("Get All çalıştı")
-    try{
-        const users=await User.find();       
-        res.status(200).json(users);
-    }catch(err){
-        next(err);
-    } 
+    console.log("Get All çalıştı");
 }
 
 export default router;
