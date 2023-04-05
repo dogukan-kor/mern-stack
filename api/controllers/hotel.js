@@ -12,7 +12,7 @@ export const createHotel=async (req,res,next)=>{
 }
 
 export const updateHotel=async (req,res,next)=>{
-    console.log("Güncelleme çalıştı")
+    console.log("hotel Güncelleme çalıştı")
     try{
         const updatedHotel=await Hotel.findByIdAndUpdate(req.params.id,
             {$set:req.body},
