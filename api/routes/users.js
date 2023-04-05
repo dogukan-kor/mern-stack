@@ -12,9 +12,11 @@ router.get("/checkuser/:id",verifyUser,(req,res,next)=>{
     res.send("user sayfasına hoşgeldiniz");
 })
 
+
 router.get("/checkadmin/:id",verifyAdmin,(req,res,next)=>{
     res.send("Admin sayfasına hoşgeldiniz.");
 })
+
 
 //Güncelleme
 router.put("/updateadmin:id", updateUser);

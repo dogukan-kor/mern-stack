@@ -15,26 +15,27 @@ export const verifyToken = (req, res, next) => {
 };
 
 export const verifyUser = (req, res, next) => {
-    verifyToken(req,res,next, () => {
+    verifyToken(req,res, () => {
     if (req.user.id === req.params.id) {
-        console.log("doğru çalıştı")
         next();
     } 
     else {
         console.log("çalıştı");
-        return next(createError(403, "You are not authorized!"));
+        return next(createError(403, "Kullanıcı getirilemedi hatalı id!"));
     }
 
   });
 };
 
 export const verifyAdmin = (req, res, next) => {
- 
-  verifyToken(req, res, next, () => {
+    verifyToken(req,res, () => {
     if (req.user.isAdmin) {
-      next();
-    } else {
-      return next(createError(403, "You are not authorized!"));
+        next();
+    } 
+    else {
+        console.log(req.user.isAdmin);
+        return next(createError(403, "admin gelemedi id!"));
     }
+
   });
 };
